@@ -1,0 +1,25 @@
+{
+  "name": "ai-copy-cleaner",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Blocks Network agent that rewrites AI-generated copy into direct, specific text.",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "blocks-run",
+    "check": "npm run check:agent-card && npm run typecheck",
+    "check:agent-card": "node scripts/check-agent-card.mjs",
+    "typecheck": "tsc --noEmit",
+    "trigger": "tsx trigger.ts"
+  },
+  "dependencies": {
+    "@blocks-network/sdk": "latest",
+    "dotenv": "^16.4.5"
+  },
+  "devDependencies": {
+    "tsx": "^4.19.2",
+    "typescript": "^5.4.5"
+  }
+}

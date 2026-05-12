@@ -1,0 +1,11 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+.npmrc
+pip.conf
+node_modules/
+npm-debug.log*
+.agent.log
+.agent.pid
+ai_copy_cleaner_h7p9/

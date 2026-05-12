@@ -1,0 +1,63 @@
+{
+  "identity": {
+    "agentName": "ai_copy_cleaner_h7p9",
+    "displayName": "AI Copy Cleaner",
+    "description": "Rewrites AI-generated copy into direct, specific human-sounding text and returns only the cleaned copy.",
+    "version": "1.0.0",
+    "provider": {
+      "organization": "ai_copy_cleaner_h7p9"
+    }
+  },
+  "capabilities": {
+    "taskKinds": [
+      "request"
+    ]
+  },
+  "io": {
+    "inputs": [
+      {
+        "id": "request",
+        "description": "Text to clean.",
+        "contentType": "application/json",
+        "required": true,
+        "example": {
+          "text": "Today, we're excited to share our cutting-edge platform that seamlessly empowers teams to unlock the power of smarter workflows. Furthermore, this enables users to streamline collaboration."
+        },
+        "schema": {
+          "type": "object",
+          "required": [
+            "text"
+          ],
+          "properties": {
+            "text": {
+              "type": "string",
+              "title": "Text",
+              "default": "Today, we're excited to share our cutting-edge platform that seamlessly empowers teams to unlock the power of smarter workflows. Furthermore, this enables users to streamline collaboration."
+            }
+          }
+        }
+      }
+    ],
+    "outputs": [
+      {
+        "id": "result",
+        "description": "Cleaned copy.",
+        "contentType": "text/plain",
+        "guaranteed": true
+      }
+    ]
+  },
+  "skills": [
+    {
+      "id": "main",
+      "name": "Clean AI Copy",
+      "description": "Applies the ai-copy-cleaner.md editing rules to remove synthetic phrasing, filler, puffery, and awkward structure from draft copy."
+    }
+  ],
+  "runtime": {
+    "handler": "./handler.ts",
+    "handlerExport": "default",
+    "concurrency": 1,
+    "expectedInstances": 1
+  }
+}
