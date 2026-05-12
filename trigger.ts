@@ -8,7 +8,7 @@ import type { ProgressEvent } from '@blocks-network/sdk';
  */
 async function main() {
   const client = await TaskClient.create({
-    listing: 'private',
+    billingMode: 'free',
     apiKey: process.env.BLOCKS_API_KEY!,
   });
 
